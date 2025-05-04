@@ -137,6 +137,20 @@ chmod +x search_config.sh
 
 ## Задание 5 Docker-образ для скриптов
 
+**Скрипт run_scripts.sh для тестового запуска скриптов:**
+```bash
+#!/bin/bash
+
+./search_log.sh config.txt path
+./search_config.sh config.txt name
+```
+
+**Использование:**
+```bash
+chmod +x run_scripts.sh
+./run_scripts.sh
+```
+
 **Dockerfile:**
 ```dockerfile
 FROM ubuntu:latest
@@ -149,7 +163,7 @@ WORKDIR /app
 COPY *.sh *.txt ./
 RUN chmod +x *.sh
 
-ENTRYPOINT ["./search_log.sh"]
+ENTRYPOINT ["./run_scripts.sh"]
 ```
 
 **Сборка и запуск:**

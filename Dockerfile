@@ -8,4 +8,4 @@ WORKDIR /app
 COPY *.sh *.txt ./
 RUN chmod +x *.sh
 
-ENTRYPOINT ["./search_log.sh"]
+ENTRYPOINT ["./run_scripts.sh"]
